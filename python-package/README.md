@@ -35,8 +35,40 @@ It adds:
 
 ! Be aware that if the function that you are adding is more complicated than the template. So, always double check !
 
+## System Dependencies
 
+Some functions in geobr require additional system tools to be installed:
 
+### For RAR file extraction (`read_baze_sites`)
+
+This function requires one of the following tools to be installed:
+
+- **unrar**: 
+  - macOS: `brew install unrar`
+  - Ubuntu/Debian: `sudo apt-get install unrar`
+  - Windows: Install WinRAR
+
+- **unar**:
+  - macOS: `brew install unar`
+  - Ubuntu/Debian: `sudo apt-get install unar`
+  - Windows: Install The Unarchiver
+
+- **7-Zip**:
+  - macOS: `brew install p7zip`
+  - Ubuntu/Debian: `sudo apt-get install p7zip-full`
+  - Windows: Install 7-Zip
+
+### For ZIP file extraction (IBGE files)
+
+Some IBGE files use compression methods not supported by Python's built-in zipfile module. The following functions use the system's `unzip` command:
+
+- `read_census_tract_2022`
+- `read_neighborhoods_2022`
+
+Make sure you have the `unzip` command available on your system:
+- macOS: Typically pre-installed
+- Ubuntu/Debian: `sudo apt-get install unzip`
+- Windows: Install a tool like 7-Zip or add unzip via WSL
 
 ## Translation Status
 
@@ -70,10 +102,8 @@ It adds:
 | lookup_muni               | Yes         | No    |
 | read_neighborhood         | Yes         | Yes   |
 
-
 # Release new version
 
 ```
 poetry version [patch|minor|major]
 poetry publish --build
-```
