@@ -17,6 +17,7 @@ setup(
         "fiona>=1.8.0",
         "shapely>=1.7.0",
         "gdown>=4.5.1",  # For Google Drive downloads
+        "tabulate>=0.8.9",  # For formatted table output
     ],
     classifiers=[
         "Programming Language :: Python :: 3",
