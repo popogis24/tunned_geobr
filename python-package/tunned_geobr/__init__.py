@@ -114,3 +114,15 @@ from .read_og_basement import read_og_basement
 from .read_hydroelectric_feasibility_studies import read_hydroelectric_feasibility_studies
 from .read_hydroelectric_inventory_aai_studies import read_hydroelectric_inventory_aai_studies
 from .read_ama_anemometric_towers import read_ama_anemometric_towers
+from .read_biomethane_plants import read_biomethane_plants
+from .read_fuel_bases import read_fuel_bases
+from .read_glp_bases import read_glp_bases
+from .read_processing_facilities import read_processing_facilities
+from .read_oil_and_derivatives_terminal import read_oil_and_derivatives_terminal
+from .read_pio_terminals import read_pio_terminals
+from .read_pio_ducts import read_pio_ducts
+from .read_gnl_terminals import read_gnl_terminals
+from .read_natural_gas_processing_hub import read_natural_gas_processing_hub
+from .read_compression_stations import read_compression_stations
+from .read_natural_gas_delivery_points import read_natural_gas_delivery_points
+from .read_quilombola_areas import read_quilombola_areas
