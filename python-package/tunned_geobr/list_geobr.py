@@ -101,7 +101,78 @@ def list_geobr():
         # Land tenure and property datasets
         {"Function": "read_snci_properties", "Geography": "SNCI Properties", "Years": "All", "Source": "INCRA"},
         {"Function": "read_sigef_properties", "Geography": "SIGEF Properties", "Years": "All", "Source": "INCRA"},
-        {"Function": "read_quilombola_areas", "Geography": "Quilombola Areas", "Years": "All", "Source": "INCRA"}
+        {"Function": "read_quilombola_areas", "Geography": "Quilombola Areas", "Years": "All", "Source": "INCRA"},
+        
+        # Energy infrastructure datasets - Solar
+        {"Function": "read_existent_solar", "Geography": "Existing Solar Power Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_solar", "Geography": "Planned Solar Power Plants", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Wind
+        {"Function": "read_existent_eolic", "Geography": "Existing Wind Power Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_eolic", "Geography": "Planned Wind Power Plants", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Hydroelectric
+        {"Function": "read_existent_uhe", "Geography": "Existing Large Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_existent_pch", "Geography": "Existing Small Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_existent_cgh", "Geography": "Existing Mini Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_uhe", "Geography": "Planned Large Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_pch", "Geography": "Planned Small Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_cgh", "Geography": "Planned Mini Hydroelectric Plants", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Thermoelectric
+        {"Function": "read_existent_biomass_ute", "Geography": "Existing Biomass Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_existent_fossile_ute", "Geography": "Existing Fossil Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_existent_nuclear_ute", "Geography": "Existing Nuclear Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_biomass_ute", "Geography": "Planned Biomass Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_fossile_ute", "Geography": "Planned Fossil Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_nuclear_ute", "Geography": "Planned Nuclear Thermoelectric Plants", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Transmission
+        {"Function": "read_existent_substations", "Geography": "Existing Electrical Substations", "Years": "All", "Source": "EPE"},
+        {"Function": "read_existent_transmission_lines", "Geography": "Existing Transmission Lines", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_substations", "Geography": "Planned Electrical Substations", "Years": "All", "Source": "EPE"},
+        {"Function": "read_planned_transmission_lines", "Geography": "Planned Transmission Lines", "Years": "All", "Source": "EPE"},
+        {"Function": "read_subsystem_interconnected", "Geography": "National Interconnected System Subsystems", "Years": "All", "Source": "EPE"},
+        {"Function": "read_isolated_systems", "Geography": "Isolated Electrical Systems", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Biofuel Plants
+        {"Function": "read_etanol_plants", "Geography": "Ethanol Production Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_biodiesel_plants", "Geography": "Biodiesel Production Plants", "Years": "All", "Source": "EPE"},
+        {"Function": "read_biomethane_plants", "Geography": "Biomethane Production Plants", "Years": "All", "Source": "EPE"},
+        
+        # Energy infrastructure datasets - Oil and Gas Infrastructure
+        {"Function": "read_fuel_bases", "Geography": "Fuel Bases", "Years": "All", "Source": "EPE"},
+        {"Function": "read_glp_bases", "Geography": "GLP (LPG) Bases", "Years": "All", "Source": "EPE"},
+        {"Function": "read_processing_facilities", "Geography": "Oil and Gas Processing Facilities", "Years": "All", "Source": "EPE"},
+        {"Function": "read_oil_and_derivatives_terminal", "Geography": "Oil and Derivatives Terminals", "Years": "All", "Source": "EPE"},
+        {"Function": "read_pio_terminals", "Geography": "PIO Terminals", "Years": "All", "Source": "EPE"},
+        {"Function": "read_pio_ducts", "Geography": "PIO Ducts", "Years": "All", "Source": "EPE"},
+        {"Function": "read_gnl_terminals", "Geography": "GNL (LNG) Terminals", "Years": "All", "Source": "EPE"},
+        {"Function": "read_natural_gas_processing_hub", "Geography": "Natural Gas Processing Hubs", "Years": "All", "Source": "EPE"},
+        {"Function": "read_compression_stations", "Geography": "Natural Gas Compression Stations", "Years": "All", "Source": "EPE"},
+        {"Function": "read_natural_gas_delivery_points", "Geography": "Natural Gas Delivery Points", "Years": "All", "Source": "EPE"},
+        {"Function": "read_gas_transport_pipelines", "Geography": "Gas Transport Pipelines", "Years": "All", "Source": "EPE"},
+        {"Function": "read_gas_distribution_pipelines", "Geography": "Gas Distribution Pipelines", "Years": "All", "Source": "EPE"},
+        {"Function": "read_areas_under_contract", "Geography": "Oil and Gas Areas Under Contract", "Years": "All", "Source": "EPE"},
+        {"Function": "read_federal_union_areas", "Geography": "Federal Union Areas for Oil and Gas", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_effective_geographic_basin", "Geography": "Oil and Gas Effective Geographic Basins", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_probabilistic_effective_basin", "Geography": "Oil and Gas Probabilistic Effective Basins", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_predominant_fluid_type", "Geography": "Oil and Gas Predominant Fluid Type Areas", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_unconventional_resources", "Geography": "Oil and Gas Unconventional Resources", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_total_ipa", "Geography": "Oil and Gas Total IPA", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_exploratory_intensity", "Geography": "Oil and Gas IPA Exploratory Intensity", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_exploratory_activity", "Geography": "Oil and Gas IPA Exploratory Activity", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_prospectiveness", "Geography": "Oil and Gas IPA Prospectiveness", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_direct_evidence", "Geography": "Oil and Gas IPA Direct Evidence of Hydrocarbons", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_need_for_knowledge", "Geography": "Oil and Gas IPA Need for Knowledge", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_ipa_supply_infrastructure", "Geography": "Oil and Gas IPA Supply Infrastructure", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_legal_pre_salt_polygon", "Geography": "Oil and Gas Legal Pre-Salt Polygon", "Years": "All", "Source": "EPE"},
+        {"Function": "read_exploration_production_environment", "Geography": "Exploration and Production Environment", "Years": "All", "Source": "EPE"},
+        {"Function": "read_sedimentary_basins", "Geography": "Sedimentary Basins", "Years": "All", "Source": "EPE"},
+        {"Function": "read_og_basement", "Geography": "Oil and Gas Basement", "Years": "All", "Source": "EPE"},
+        {"Function": "read_hydroelectric_feasibility_studies", "Geography": "Hydroelectric Feasibility Studies", "Years": "All", "Source": "EPE"},
+        {"Function": "read_hydroelectric_inventory_aai_studies", "Geography": "Hydroelectric Inventory and AAI Studies", "Years": "All", "Source": "EPE"},
+        {"Function": "read_ama_anemometric_towers", "Geography": "AMA Anemometric Towers", "Years": "All", "Source": "EPE"}
     ]
     
     # Create DataFrame
