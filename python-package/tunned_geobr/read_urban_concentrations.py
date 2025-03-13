@@ -2,7 +2,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_urban_concentrations(year=2015, simplified=True, verbose=False):
+def read_urban_concentrations(year=2015, simplified=False, verbose=False):
     r""" Download urban concentration areas in Brazil
     
      @description

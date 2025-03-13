@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_disaster_risk_area(year=2010, simplified=True, verbose=False):
+def read_disaster_risk_area(year=2010, simplified=False, verbose=False):
     """ Download official data of disaster risk areas as an sf object.
     
      This function reads the the official data of disaster risk areas in Brazil. It specifically focuses

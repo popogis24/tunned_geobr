@@ -2,7 +2,7 @@ from geobr.utils import select_metadata, download_gpkg
 
 
 def read_comparable_areas(
-    start_year=1970, end_year=2010, simplified=True, verbose=False
+    start_year=1970, end_year=2010, simplified=False, verbose=False
 ):
     r"""Download spatial data of historically comparable municipalities
 

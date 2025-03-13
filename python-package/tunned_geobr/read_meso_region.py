@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_meso_region(code_meso="all", year=2010, simplified=True, verbose=False):
+def read_meso_region(code_meso="all", year=2010, simplified=False, verbose=False):
     """Download shape files of meso region as sf objects. Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)
 
      Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)

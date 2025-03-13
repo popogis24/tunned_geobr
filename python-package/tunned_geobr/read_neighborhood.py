@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_neighborhood(year=2010, simplified=True, verbose=False):
+def read_neighborhood(year=2010, simplified=False, verbose=False):
     """ Download neighborhood limits of Brazilian municipalities as a geopandas geodataframe object
     
     Parameters

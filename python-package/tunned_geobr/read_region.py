@@ -1,7 +1,7 @@
 from geobr import read_region as _read_region
 
 
-def read_region(year=2010, simplified=True, verbose=False):
+def read_region(year=2010, simplified=False, verbose=False):
     """ Download shape file of Brazil Regions as sf objects.
     
     Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)

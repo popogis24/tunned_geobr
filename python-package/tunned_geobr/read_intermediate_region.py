@@ -2,7 +2,7 @@ from geobr.utils import select_metadata, download_gpkg
 
 
 def read_intermediate_region(
-    code_intermadiate="all", year=2019, simplified=True, verbose=False
+    code_intermadiate="all", year=2019, simplified=False, verbose=False
 ):
     r"""Download spatial data of Brazil's Intermediate Geographic Areas
 

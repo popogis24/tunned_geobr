@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_semiarid(year=2017, simplified=True, verbose=False):
+def read_semiarid(year=2017, simplified=False, verbose=False):
     """ Download official data of Brazilian Semiarid as an sf object.
     
      This data set covers the whole of Brazilian Semiarid as defined in the resolution in  23/11/2017). The original

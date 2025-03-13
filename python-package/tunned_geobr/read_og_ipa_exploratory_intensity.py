@@ -127,3 +127,6 @@ def read_og_ipa_exploratory_intensity(simplified=False, verbose=False):
     
     except Exception as e:
         raise Exception(f"Failed to download or process IPA exploratory intensity data: {str(e)}")
+
+if __name__ == '__main__':
+    read_og_ipa_exploratory_intensity()

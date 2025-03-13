@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_country(year=2010, simplified=True, verbose=False):
+def read_country(year=2010, simplified=False, verbose=False):
     """ Download shape file of Brazil as sf objects. Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)
     
      @param year Year of the data (defaults to 2010)

@@ -5,7 +5,7 @@ import requests
 from zipfile import ZipFile
 from io import BytesIO
 
-def read_municipality(code_muni="all", simplified=True):
+def read_municipality_direct(code_muni="all", simplified=False):
     """Download shapefiles of Brazilian municipalities as geopandas objects.
 
     This function downloads and processes municipality data directly from IBGE (Brazilian Institute of Geography and Statistics).

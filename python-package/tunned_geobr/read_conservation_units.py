@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_conservation_units(date=201909, simplified=True, verbose=False):
+def read_conservation_units(date=201909, simplified=False, verbose=False):
     """ Download official data of Brazilian conservation untis as an sf object.
     
      This data set covers the whole of Brazil and it includes the polygons of all conservation untis present in Brazilian

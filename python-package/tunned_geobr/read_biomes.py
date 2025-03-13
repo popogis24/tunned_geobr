@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_biomes(year=2019, simplified=True, verbose=False):
+def read_biomes(year=2019, simplified=False, verbose=False):
     """ Download official data of Brazilian biomes as an sf object.
     
      This data set includes  polygons of all biomes present in Brazilian territory and coastal area.

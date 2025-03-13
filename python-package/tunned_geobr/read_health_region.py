@@ -2,7 +2,7 @@ from geobr.utils import select_metadata, download_gpkg
 
 
 def read_health_region(year=2013, macro=False, simplified=True, verbose=False):
-    """Download official data of Brazilian health regions as an sf object.
+    """Download official data of Brazilian health regions ascii(object) an sf object.
 
     Health regions are used to guide the the regional and state planning of health services.
     Macro health regions, in particular, are used to guide the planning of high complexity

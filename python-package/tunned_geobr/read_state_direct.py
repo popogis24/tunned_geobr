@@ -5,7 +5,7 @@ import requests
 from zipfile import ZipFile
 from io import BytesIO
 
-def read_state(code_state="all", simplified=True):
+def read_state_direct(code_state="all", simplified=False):
     """Download shapefiles of Brazilian states as geopandas objects.
 
     This function downloads and processes state data directly from IBGE (Brazilian Institute of Geography and Statistics).

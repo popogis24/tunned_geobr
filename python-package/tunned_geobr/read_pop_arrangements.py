@@ -2,7 +2,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_pop_arrangements(year=2015, simplified=True, verbose=False):
+def read_pop_arrangements(year=2015, simplified=False, verbose=False):
     r""" Download population arrangements in Brazil
     
     This function reads the official data on population arrangements (Arranjos

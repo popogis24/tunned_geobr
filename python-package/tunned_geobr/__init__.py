@@ -1,4 +1,4 @@
-from .read_state_direct import read_state
+from .read_state import read_state
 from .read_amazon import read_amazon
 from .read_biomes import read_biomes
 from .read_country import read_country
@@ -16,7 +16,7 @@ from .list_geobr import list_geobr
 from .read_census_tract import read_census_tract
 from .read_meso_region import read_meso_region
 from .read_micro_region import read_micro_region
-from .read_municipality_direct import read_municipality
+from .read_municipality import read_municipality
 from .read_weighting_area import read_weighting_area
 from .read_neighborhood import read_neighborhood
 from .read_health_region import read_health_region
@@ -65,7 +65,6 @@ from .read_water_bodies_ana import read_water_bodies_ana
 from .read_pan_strategic_areas import read_pan_strategic_areas
 from .read_geographic_regions import read_geographic_regions
 from .read_biosphere_reserves import read_biosphere_reserves
-from .read_census_tract_2022 import read_census_tract_2022
 from .read_neighborhoods_2022 import read_neighborhoods_2022
 from .read_baze_sites import read_baze_sites
 from .read_existent_eolic import read_existent_eolic

@@ -85,8 +85,9 @@ def read_existent_substations(simplified=False, verbose=False):
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
                 zip_ref.extractall(temp_dir)
             
+            zip_dir = os.path.join(temp_dir,'zipfolder')
             # Find the shapefile in the extracted files
-            shp_files = [f for f in os.listdir(temp_dir) if f.endswith('.shp')]
+            shp_files = [f for f in os.listdir(zip_dir) if f.endswith('.shp')]
             
             if not shp_files:
                 raise Exception("No shapefile found in the downloaded zip file")
@@ -95,7 +96,7 @@ def read_existent_substations(simplified=False, verbose=False):
             if verbose:
                 print("Reading shapefile")
             
-            shp_path = os.path.join(temp_dir, shp_files[0])
+            shp_path = os.path.join(zip_dir, shp_files[0])
             gdf = gpd.read_file(shp_path)
             
             # Convert to SIRGAS 2000 (EPSG:4674)
@@ -111,7 +112,7 @@ def read_existent_substations(simplified=False, verbose=False):
                 
                 # Select only the most important columns
                 # Adjust these columns based on the actual data structure
-                cols_to_keep = ['NOME', 'TENSAO', 'PROPRIETAR', 'UF', 'MUNICIPIO', 'geometry']
+                cols_to_keep = ['NOME', 'POTENCIA', 'COMBUSTIVE', 'PROPRIETAR', 'UF', 'MUNICIPIO', 'geometry']
                 cols_available = [col for col in cols_to_keep if col in gdf.columns]
                 
                 if not cols_available:
@@ -120,7 +121,7 @@ def read_existent_substations(simplified=False, verbose=False):
                     gdf = gdf[cols_available]
             
             if verbose:
-                print("Finished processing existing electrical substations data")
+                print("Finished processing existing biomass thermoelectric power plants data")
             
             return gdf
     

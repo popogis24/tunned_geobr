@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_indigenous_land(date=201907, simplified=True, verbose=False):
+def read_indigenous_land(date=201907, simplified=False, verbose=False):
     """ Download official data of indigenous lands as an sf object.
     
      The data set covers the whole of Brazil and it includes indigenous lands from all ethnicities and

@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_urban_area(year=2015, simplified=True, verbose=False):
+def read_urban_area(year=2015, simplified=False, verbose=False):
     """ Download official data of urbanized areas in Brazil as an sf object.
     
      This function reads the official data on the urban footprint of Brazilian cities

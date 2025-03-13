@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_metro_area(year=2018, simplified=True, verbose=False):
+def read_metro_area(year=2018, simplified=False, verbose=False):
     """ Download shape files of official metropolitan areas in Brazil as an sf object.
     
      The function returns the shapes of municipalities grouped by their respective metro areas.

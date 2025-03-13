@@ -2,7 +2,7 @@ from geobr.utils import select_metadata, download_gpkg, change_type_list, test_o
 
 
 def read_immediate_region(
-    code_immediate="all", year=2017, simplified=True, verbose=False
+    code_immediate="all", year=2017, simplified=False, verbose=False
 ):
     """ Download shape files of Brazil's Immediate Geographic Areas as sf objects
     

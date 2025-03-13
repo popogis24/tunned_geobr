@@ -2,7 +2,7 @@ from geobr.utils import select_metadata, download_gpkg
 
 
 def read_weighting_area(
-    code_weighting="all", year=2010, simplified=True, verbose=False
+    code_weighting="all", year=2010, simplified=False, verbose=False
 ):
     """Download shape files of Census Weighting Areas (area de ponderacao) of the Brazilian Population Census.
 

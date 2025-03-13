@@ -7,7 +7,7 @@ import warnings
 import shutil
 
 
-def read_og_legal_pre_salt_polygon(simplified=True, verbose=False):
+def read_og_legal_pre_salt_polygon(simplified=False, verbose=False):
     """Download data for Oil and Gas Legal Pre-Salt Polygon in Brazil.
 
     This function downloads, processes, and returns data for Oil and Gas Legal Pre-Salt Polygon
@@ -45,10 +45,7 @@ def read_og_legal_pre_salt_polygon(simplified=True, verbose=False):
         response.raise_for_status()
         response_json = response.json()
 
-        if "value" not in response_json or not response_json["value"]:
-            raise ValueError("No data found in the response")
-
-        download_url = response_json["value"]["itemUrl"]
+        download_url = response_json['results'][0]['value']['url']
         
         if verbose:
             print(f"Download URL: {download_url}")
@@ -74,12 +71,13 @@ def read_og_legal_pre_salt_polygon(simplified=True, verbose=False):
                 zip_ref.extractall(temp_dir)
             
             # Find the shapefile
-            shp_files = [f for f in os.listdir(temp_dir) if f.endswith(".shp")]
+            zip_dir = os.path.join(temp_dir, 'zipfolder')
+            shp_files = [f for f in os.listdir(zip_dir) if f.endswith(".shp")]
             
             if not shp_files:
                 raise FileNotFoundError("No shapefile found in the downloaded zip file")
             
-            shp_path = os.path.join(temp_dir, shp_files[0])
+            shp_path = os.path.join(zip_dir, shp_files[0])
             
             if verbose:
                 print(f"Reading shapefile from {shp_path}")
@@ -99,7 +97,7 @@ def read_og_legal_pre_salt_polygon(simplified=True, verbose=False):
                 essential_cols = ["geometry"]
                 
                 # Add any other essential columns that exist in the dataset
-                for col in ["NOME", "DESCRICAO", "AREA_KM2"]:
+                for col in ["NOME", "MUNICIPIO", "UF", "ALTURA", "SITUACAO"]:
                     if col in gdf.columns:
                         essential_cols.append(col)
                 

@@ -31,7 +31,7 @@ def read_water_bodies_ana(simplified=False):
     """
     
     url = "https://metadados.snirh.gov.br/files/7d054e5a-8cc9-403c-9f1a-085fd933610c/geoft_bho_massa_dagua_v2019.zip"
-    
+
     try:
         # Download the zip file
         response = requests.get(url)
