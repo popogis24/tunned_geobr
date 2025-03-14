@@ -1,7 +1,7 @@
 from geobr.utils import select_metadata, download_gpkg
 
 
-def read_amazon(year=2012, simplified=True, verbose=False):
+def read_amazon(year=2012, simplified=False, verbose=False):
     """ Download official data of Brazil's Legal Amazon as an sf object.
     
      This data set covers the whole of Brazil's Legal Amazon as defined in the federal law n. 12.651/2012). The original

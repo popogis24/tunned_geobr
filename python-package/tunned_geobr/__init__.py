@@ -125,3 +125,6 @@ from .read_natural_gas_processing_hub import read_natural_gas_processing_hub
 from .read_compression_stations import read_compression_stations
 from .read_natural_gas_delivery_points import read_natural_gas_delivery_points
 from .read_quilombola_areas import read_quilombola_areas
+from .read_icmbio_embargoes import read_icmbio_embargoes
+from .read_icmbio_infractions import read_icmbio_infractions
+from .read_ibama_embargoes import read_ibama_embargoes

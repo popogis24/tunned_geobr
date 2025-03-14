@@ -168,7 +168,12 @@ def list_geobr():
         {"Function": "read_og_basement", "Geography": "Oil and Gas Basement", "Years": "All", "Source": "EPE"},
         {"Function": "read_hydroelectric_feasibility_studies", "Geography": "Hydroelectric Feasibility Studies", "Years": "All", "Source": "EPE"},
         {"Function": "read_hydroelectric_inventory_aai_studies", "Geography": "Hydroelectric Inventory and AAI Studies", "Years": "All", "Source": "EPE"},
-        {"Function": "read_ama_anemometric_towers", "Geography": "AMA Anemometric Towers", "Years": "All", "Source": "EPE"}
+        {"Function": "read_ama_anemometric_towers", "Geography": "AMA Anemometric Towers", "Years": "All", "Source": "EPE"},
+        
+        # Environmental Enforcement Data
+        {"Function": "read_icmbio_embargoes", "Geography": "ICMBio Embargoed Areas", "Years": "All", "Source": "ICMBio"},
+        {"Function": "read_icmbio_infractions", "Geography": "ICMBio Infraction Notices", "Years": "All", "Source": "ICMBio"},
+        {"Function": "read_ibama_embargoes", "Geography": "IBAMA Embargoed Areas", "Years": "All", "Source": "IBAMA"}
     ]
     
     # Create DataFrame
