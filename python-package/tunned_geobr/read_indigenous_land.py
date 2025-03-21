@@ -1,44 +1,77 @@
-from geobr.utils import select_metadata, download_gpkg
+import geopandas as gpd
+import tempfile
+import os
+import requests
+from zipfile import ZipFile
+from io import BytesIO
 
-
-def read_indigenous_land(date=201907, simplified=False, verbose=False):
-    """ Download official data of indigenous lands as an sf object.
+def read_indigenous_land(simplified=False):
+    """Download Indigenous Land data from FUNAI.
     
-     The data set covers the whole of Brazil and it includes indigenous lands from all ethnicities and
- in different stages of demarcation. The original data comes from the National Indian Foundation (FUNAI)
- and can be found at http://www.funai.gov.br/index.php/shape. Although original data is updated monthly,
- the geobr package will only keep the data for a few months per year.
-
+    This function downloads and processes data about indigenous lands in Brazil 
+    from FUNAI (Fundação Nacional dos Povos Indígenas). The data includes location 
+    and basic information about registered indigenous lands.
+    Original source: FUNAI - Fundação Nacional dos Povos Indígenas
+    
     Parameters
     ----------
-    date : int, optional
-        A date numer in YYYYMM format, by default 201907
-    simplified: boolean, by default True
-        Data 'type', indicating whether the function returns the 'original' dataset 
-        with high resolution or a dataset with 'simplified' borders (Default)
-    verbose : bool, optional
-        by default False
-    
+    simplified : boolean, by default False
+        If True, returns a simplified version of the dataset with fewer columns
+        
     Returns
     -------
     gpd.GeoDataFrame
-        Metadata and geopackage of selected states
-    
-    Raises
-    ------
-    Exception
-        If parameters are not found or not well defined
-
+        Geodataframe with indigenous land data
+        Columns:
+        - geometry: Land boundaries
+        - nome: Land name
+        - municipio: Municipality
+        - uf: State
+        - etnia: Ethnicity
+        - fase: Legal status
+        - area_ha: Area in hectares
+        
     Example
     -------
-    >>> from geobr import read_indigenous_land
-
-    # Read specific state at a given year
-    >>> df = read_indigenous_land(date=201907)
+    >>> from tunned_geobr import read_indigenous_land
+    >>> lands = read_indigenous_land()
     """
-
-    metadata = select_metadata("indigenous_land", year=date, simplified=simplified)
-
-    gdf = download_gpkg(metadata)
-
+    
+    url = "https://geoserver.funai.gov.br/geoserver/Funai/ows?service=WFS&version=1.0.0&request=GetFeature&typeName=Funai%3Atis_poligonais&maxFeatures=10000&outputFormat=SHAPE-ZIP"
+    
+    try:
+        # Download the zip file with a 60-second timeout
+        response = requests.get(url, timeout=60)
+        if response.status_code != 200:
+            raise Exception(f"Failed to download data from FUNAI. Status code: {response.status_code}")
+            
+        # Create a temporary directory
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Extract the zip file
+            with ZipFile(BytesIO(response.content)) as zip_ref:
+                zip_ref.extractall(temp_dir)
+            
+            # Find the shapefile
+            shp_files = [f for f in os.listdir(temp_dir) if f.endswith('.shp')]
+            if not shp_files:
+                raise Exception("No shapefile found in the downloaded data")
+                
+            # Read the shapefile
+            gdf = gpd.read_file(os.path.join(temp_dir, shp_files[0]))
+            gdf = gdf.to_crs(4674)  # Convert to SIRGAS 2000
+            
+            # Print columns for debugging
+            print("Available columns:", gdf.columns)
+            
+            if simplified:
+                columns_to_keep = ['geometry', 'nome', 'municipio', 'uf', 'etnia', 'fase', 'area_ha']
+                existing_columns = ['geometry'] + [col for col in columns_to_keep[1:] if col in gdf.columns]
+                gdf = gdf[existing_columns]
+    
+    except Exception as e:
+        raise Exception(f"Error downloading indigenous land data: {str(e)}")
+        
     return gdf
+
+if __name__ == '__main__':
+    read_indigenous_land()

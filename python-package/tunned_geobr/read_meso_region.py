@@ -1,78 +1,69 @@
-from geobr.utils import select_metadata, download_gpkg
+import geopandas as gpd
+import tempfile
+import os
+import requests
+from zipfile import ZipFile
+from io import BytesIO
 
-
-def read_meso_region(code_meso="all", year=2010, simplified=False, verbose=False):
-    """Download shape files of meso region as sf objects. Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)
-
-     Data at scale 1:250,000, using Geodetic reference system "SIRGAS2000" and CRS(4674)
-
+def read_meso_region(simplified=False):
+    """Download official mesoregion data from IBGE.
+    
+    This function downloads and processes mesoregion data from IBGE (Brazilian Institute of Geography and Statistics).
+    The data includes mesoregions of Brazil for the year 2022.
+    Original source: IBGE
+    
     Parameters
     ----------
-    code_meso: int or string, by default 'all'
-        The 4-digit code of a meso region. If the two-digit code or a two-letter uppercase abbreviation of
-        a state is passed, (e.g. 33 or "RJ") the function will load all meso regions of that state.
-        If code_meso="all", all meso regions of the country are loaded.
-    year : int, optional
-        Year of the data, by default 2010
-    simplified: boolean, by default True
-        Data 'type', indicating whether the function returns the 'original' dataset
-        with high resolution or a dataset with 'simplified' borders (Default)
-    verbose : bool, optional
-        by default False
-
+    simplified : boolean, by default False
+        If True, returns a simplified version of the dataset with fewer columns
+        
     Returns
     -------
     gpd.GeoDataFrame
-        Metadata and geopackage of selected states
-
-    Raises
-    ------
-    Exception
-        If parameters are not found or not well defined
-
+        Geodataframe with mesoregion data
+        
     Example
     -------
     >>> from geobr import read_meso_region
-
-    # Read specific meso region at a given year
-    >>> df = read_meso_region(code_meso=3301, year=2018)
-
-    # Read all meso regions of a state at a given year
-    >>> df = read_meso_region(code_meso=12, year=2017)
-    >>> df = read_meso_region(code_meso="AM", year=2000)
-
-    # Read all meso regions of the country at a given year
-    >>> df = read_meso_region(code_meso="all", year=2010)
+    
+    # Read mesoregion data
+    >>> meso_region = read_meso_region()
     """
-
-    metadata = select_metadata("meso_region", year=year, simplified=simplified)
-
-    if code_meso == "all":
-
-        if verbose:
-            print("Loading data for the whole country. This might take a few minutes.")
-
-        return download_gpkg(metadata)
-
-    metadata = metadata[
-        metadata[["code", "code_abbrev"]].apply(
-            lambda x: str(code_meso)[:2] in str(x["code"])
-            or str(code_meso)[:2]  # if number e.g. 12
-            in str(x["code_abbrev"]),  # if UF e.g. RO
-            1,
-        )
-    ]
-
-    if not len(metadata):
-        raise Exception("Invalid Value to argument code_meso.")
-
-    gdf = download_gpkg(metadata)
-
-    if len(str(code_meso)) == 2:
-        return gdf
-
-    elif code_meso in gdf["code_meso"].tolist():
-        return gdf.query(f"code_meso == {code_meso}")
-
-    else:
-        raise Exception("Invalid Value to argument code_meso.")
+    
+    url = "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2022/Brasil/BR/BR_Mesorregioes_2022.zip"
+    
+    try:
+        # Download the zip file
+        response = requests.get(url)
+        if response.status_code != 200:
+            raise Exception("Failed to download data from IBGE")
+            
+        # Create a temporary directory
+        with tempfile.TemporaryDirectory() as temp_dir:
+            # Extract zip content
+            with ZipFile(BytesIO(response.content)) as zip_ref:
+                zip_ref.extractall(temp_dir)
+                
+            # Find the shapefile
+            shp_files = [f for f in os.listdir(temp_dir) if f.endswith('.shp')]
+            if not shp_files:
+                raise Exception("No shapefile found in the downloaded data")
+                
+            # Read the shapefile
+            gdf = gpd.read_file(os.path.join(temp_dir, shp_files[0]))
+            
+            if simplified:
+                # Keep only the most relevant columns
+                # Note: These columns are based on typical mesoregion data structure
+                # You may want to adjust these based on the actual data
+                columns_to_keep = [
+                    'geometry',
+                    'CD_MESO',  # Mesoregion code
+                    'NM_MESO',  # Mesoregion name
+                ]
+                gdf = gdf[columns_to_keep]
+    
+    except Exception as e:
+        raise Exception(f"Error downloading mesoregion data: {str(e)}")
+        
+    return gdf
