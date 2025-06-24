@@ -32,8 +32,6 @@ def read_snci_properties(simplified=False):
     """
     
     url = "https://certificacao.incra.gov.br/csv_shp/zip/Imóvel%20certificado%20SNCI%20Brasil.zip"
-    if 1==1:
-        return "Essa camada está muito pesada, baixe manualmente no link: " + url
     try:
         # Download the zip file
         # Disable SSL verification due to INCRA's certificate issues
@@ -81,3 +79,7 @@ def read_snci_properties(simplified=False):
         raise Exception(f"Error downloading certified properties data: {str(e)}")
         
     return gdf
+
+if __name__ == "__main__":
+    # Example usage
+    properties = read_snci_properties(simplified=True)
