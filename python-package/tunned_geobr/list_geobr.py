@@ -108,6 +108,7 @@ def list_geobr():
         {"Function": "read_existent_eolic", "Geography": "Existing Wind Power Plants", "Years": "All", "Source": "EPE"},
         {"Function": "read_planned_eolic", "Geography": "Planned Wind Power Plants", "Years": "All", "Source": "EPE"},
         {"Function": "read_sigel_wind_turbines", "Geography": "Wind Turbines", "Years": "All", "Source": "ANEEL"},
+        {"Function": "read_sigel_windpower_transmission_lines", "Geography": "Wind Power Transmission Lines", "Years": "All", "Source": "ANEEL"},
         
         # Energy infrastructure datasets - Hydroelectric
         {"Function": "read_existent_uhe", "Geography": "Existing Large Hydroelectric Plants", "Years": "All", "Source": "EPE"},
