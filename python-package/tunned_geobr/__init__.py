@@ -127,3 +127,5 @@ from .read_quilombola_areas import read_quilombola_areas
 from .read_icmbio_embargoes import read_icmbio_embargoes
 from .read_icmbio_infractions import read_icmbio_infractions
 from .read_ibama_embargoes import read_ibama_embargoes
+from .read_climate import read_climate
+from .read_exploration_blocks import read_exploration_blocks

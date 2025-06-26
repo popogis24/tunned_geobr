@@ -84,6 +84,7 @@ def list_geobr():
         {"Function": "read_geomorphology", "Geography": "Geomorphology", "Years": "All", "Source": "IBGE"},
         {"Function": "read_pedology", "Geography": "Pedology", "Years": "All", "Source": "IBGE"},
         {"Function": "read_climate_aggressiveness", "Geography": "Climate Aggressiveness", "Years": "All", "Source": "IBGE"},
+        {"Function": "read_climate", "Geography": "Climate", "Years": "All", "Source": "IBGE"},
         
         # Transportation and infrastructure datasets
         {"Function": "read_public_aerodromes", "Geography": "Public Aerodromes", "Years": "All", "Source": "MapBiomas"},
@@ -137,6 +138,7 @@ def list_geobr():
         {"Function": "read_biomethane_plants", "Geography": "Biomethane Production Plants", "Years": "All", "Source": "EPE"},
         
         # Energy infrastructure datasets - Oil and Gas Infrastructure
+        {"Function": "read_exploration_blocks", "Geography": "Oil and Gas Exploration Blocks", "Years": "All", "Source": "ANP"},
         {"Function": "read_fuel_bases", "Geography": "Fuel Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_glp_bases", "Geography": "GLP (LPG) Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_processing_facilities", "Geography": "Oil and Gas Processing Facilities", "Years": "All", "Source": "EPE"},
@@ -174,6 +176,8 @@ def list_geobr():
         {"Function": "read_icmbio_embargoes", "Geography": "ICMBio Embargoed Areas", "Years": "All", "Source": "ICMBio"},
         {"Function": "read_icmbio_infractions", "Geography": "ICMBio Infraction Notices", "Years": "All", "Source": "ICMBio"},
         {"Function": "read_ibama_embargoes", "Geography": "IBAMA Embargoed Areas", "Years": "All", "Source": "IBAMA"}
+
+        # update later
     ]
     
     # Create DataFrame
