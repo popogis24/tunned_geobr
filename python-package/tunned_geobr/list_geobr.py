@@ -139,6 +139,7 @@ def list_geobr():
         
         # Energy infrastructure datasets - Oil and Gas Infrastructure
         {"Function": "read_exploration_blocks", "Geography": "Oil and Gas Exploration Blocks", "Years": "All", "Source": "ANP"},
+        {"Function": "read_production_fields", "Geography": "Oil and Gas Production Fields", "Years": "All", "Source": "ANP"},
         {"Function": "read_fuel_bases", "Geography": "Fuel Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_glp_bases", "Geography": "GLP (LPG) Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_processing_facilities", "Geography": "Oil and Gas Processing Facilities", "Years": "All", "Source": "EPE"},
