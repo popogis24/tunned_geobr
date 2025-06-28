@@ -132,3 +132,7 @@ from .read_exploration_blocks import read_exploration_blocks
 from .read_production_fields import read_production_fields
 from .read_oil_wells import read_oil_wells
 from .read_sigel_wind_turbines import read_sigel_wind_turbines
+from .read_sigel_windpower_transmission_lines import read_sigel_windpower_transmission_lines
+from .read_sigel_hydroelectric_developments import read_sigel_hydroelectric_developments
+from .read_sigel_windpower_polygons import read_sigel_windpower_polygons
+from .read_sigel_thermoelectric_plants import read_sigel_thermoelectric_plants

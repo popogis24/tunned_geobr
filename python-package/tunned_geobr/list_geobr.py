@@ -109,6 +109,7 @@ def list_geobr():
         {"Function": "read_planned_eolic", "Geography": "Planned Wind Power Plants", "Years": "All", "Source": "EPE"},
         {"Function": "read_sigel_wind_turbines", "Geography": "Wind Turbines", "Years": "All", "Source": "ANEEL"},
         {"Function": "read_sigel_windpower_transmission_lines", "Geography": "Wind Power Transmission Lines", "Years": "All", "Source": "ANEEL"},
+        {"Function": "read_sigel_windpower_polygons", "Geography": "Wind Power Plant Polygons", "Years": "All", "Source": "ANEEL"},
         
         # Energy infrastructure datasets - Hydroelectric
         {"Function": "read_existent_uhe", "Geography": "Existing Large Hydroelectric Plants", "Years": "All", "Source": "EPE"},
@@ -175,11 +176,13 @@ def list_geobr():
         {"Function": "read_hydroelectric_feasibility_studies", "Geography": "Hydroelectric Feasibility Studies", "Years": "All", "Source": "EPE"},
         {"Function": "read_hydroelectric_inventory_aai_studies", "Geography": "Hydroelectric Inventory and AAI Studies", "Years": "All", "Source": "EPE"},
         {"Function": "read_ama_anemometric_towers", "Geography": "AMA Anemometric Towers", "Years": "All", "Source": "EPE"},
+        {"Function": "read_sigel_hydroelectric_developments", "Geography": "Hydroelectric Developments", "Years": "All", "Source": "ANEEL"},
         
         # Environmental Enforcement Data
         {"Function": "read_icmbio_embargoes", "Geography": "ICMBio Embargoed Areas", "Years": "All", "Source": "ICMBio"},
         {"Function": "read_icmbio_infractions", "Geography": "ICMBio Infraction Notices", "Years": "All", "Source": "ICMBio"},
-        {"Function": "read_ibama_embargoes", "Geography": "IBAMA Embargoed Areas", "Years": "All", "Source": "IBAMA"}
+        {"Function": "read_ibama_embargoes", "Geography": "IBAMA Embargoed Areas", "Years": "All", "Source": "IBAMA"},
+        {"Function": "read_sigel_thermoelectric_plants", "Geography": "Thermoelectric Plants", "Years": "All", "Source": "ANEEL"}
 
         # update later
     ]
