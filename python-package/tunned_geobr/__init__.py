@@ -136,3 +136,4 @@ from .read_sigel_windpower_transmission_lines import read_sigel_windpower_transm
 from .read_sigel_hydroelectric_developments import read_sigel_hydroelectric_developments
 from .read_sigel_windpower_polygons import read_sigel_windpower_polygons
 from .read_sigel_thermoelectric_plants import read_sigel_thermoelectric_plants
+from .read_drainage_ducts import read_drainage_ducts
