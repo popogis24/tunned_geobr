@@ -137,3 +137,5 @@ from .read_sigel_hydroelectric_developments import read_sigel_hydroelectric_deve
 from .read_sigel_windpower_polygons import read_sigel_windpower_polygons
 from .read_sigel_thermoelectric_plants import read_sigel_thermoelectric_plants
 from .read_drainage_ducts import read_drainage_ducts
+from .read_indigenous_village import read_indigenous_village
+from .read_indigenous_lands_in_study import read_indigenous_lands_in_study

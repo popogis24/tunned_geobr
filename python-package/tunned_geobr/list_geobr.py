@@ -42,6 +42,7 @@ def list_geobr():
         {"Function": "read_conservation_units", "Geography": "Conservation units", "Years": "All", "Source": "MMA"},
         {"Function": "read_disaster_risk_area", "Geography": "Disaster risk areas", "Years": "2010", "Source": "CEMADEN and IBGE"},
         {"Function": "read_indigenous_land", "Geography": "Indigenous lands", "Years": "All", "Source": "FUNAI"},
+        {"Function": "read_indigenous_village", "Geography": "Indigenous villages", "Years": "All", "Source": "FUNAI"},
         {"Function": "read_semiarid", "Geography": "Semi-arid region", "Years": "All", "Source": "IBGE and others"},
         {"Function": "read_health_facilities", "Geography": "Health facilities", "Years": "All", "Source": "DataSUS"},
         {"Function": "read_neighborhood", "Geography": "Neighborhood", "Years": "2010", "Source": "IBGE"},
