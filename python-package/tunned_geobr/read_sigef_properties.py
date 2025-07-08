@@ -78,7 +78,7 @@ def read_sigef_properties(simplified=False):
                 raise Exception("No shapefile found in the downloaded data")
                 
             # Read the shapefile
-            gdf = gpd.read_file(os.path.join(temp_dir, shp_files[0]))
+            gdf = gpd.read_file(os.path.join(temp_dir, shp_files[0]), use_arrow=True)
             gdf = gdf.to_crs(4674)  # Convert to SIRGAS 2000
             
             if simplified:
