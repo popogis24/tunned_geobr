@@ -40,6 +40,7 @@ def list_geobr():
         {"Function": "read_amazon", "Geography": "Amazon", "Years": "All", "Source": "IBGE, MMA, and others"},
         {"Function": "read_biomes", "Geography": "Biomes", "Years": "2004, 2019", "Source": "IBGE"},
         {"Function": "read_conservation_units", "Geography": "Conservation units", "Years": "All", "Source": "MMA"},
+        {"Function": "read_conservation_units_without_delimitation", "Geography": "Conservation units without delimitation", "Years": "All", "Source": "MMA"},
         {"Function": "read_disaster_risk_area", "Geography": "Disaster risk areas", "Years": "2010", "Source": "CEMADEN and IBGE"},
         {"Function": "read_indigenous_land", "Geography": "Indigenous lands", "Years": "All", "Source": "FUNAI"},
         {"Function": "read_indigenous_village", "Geography": "Indigenous villages", "Years": "All", "Source": "FUNAI"},

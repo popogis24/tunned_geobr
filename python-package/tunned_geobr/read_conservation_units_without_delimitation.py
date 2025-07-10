@@ -5,7 +5,7 @@ import requests
 from zipfile import ZipFile
 from io import BytesIO
 
-def read_conservation_units(simplified=False):
+def read_conservation_units_without_delimitation(simplified=False):
     """Download Conservation Units data from MMA.
     
     This function downloads and processes conservation units data from MMA. 
@@ -24,10 +24,10 @@ def read_conservation_units(simplified=False):
         
     Example
     -------
-    >>> from tunned_geobr import read_conservation_units
+    >>> from tunned_geobr import read_conservation_units_without_delimitation
     
     # Read conservation units data
-    >>> conservation_units = read_conservation_units()
+    >>> conservation_units = read_conservation_units_without_delimitation()
     """
     
     url = "https://dados.mma.gov.br/dataset/44b6dc8a-dc82-4a84-8d95-1b0da7c85dac/resource/20327e02-d4fe-4a1b-bd12-e381ab461d97/download/shp_cnuc_2025_03.zip"
@@ -53,8 +53,8 @@ def read_conservation_units(simplified=False):
                 raise Exception("No shapefile found in the downloaded data")
                 
             # Read the shapefile
-            polygon_shp = [path for path in shp_files if 'pontos' not in path]
-            gdf = gpd.read_file(polygon_shp[0], encoding='utf8')
+            point_shp = [path for path in shp_files if 'pontos' in path]
+            gdf = gpd.read_file(point_shp[0], encoding='utf8')
             gdf = gdf.to_crs(4674)  # Convert to SIRGAS 2000
             
             if simplified:
@@ -68,5 +68,5 @@ def read_conservation_units(simplified=False):
     return gdf
 
 if __name__ == '__main__':
-    gdf = read_conservation_units()
+    gdf = read_conservation_units_without_delimitation()
     print(gdf)
