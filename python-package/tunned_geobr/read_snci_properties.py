@@ -55,7 +55,7 @@ def read_snci_properties(simplified=False):
                 raise Exception("No shapefile found in the downloaded data")
                 
             # Read the shapefile
-            gdf = dgpd.read_file(os.path.join(temp_dir, shp_files[0]))
+            gdf = gpd.read_file(os.path.join(temp_dir, shp_files[0]))
             gdf = gdf.to_crs(4674)  # Convert to SIRGAS 2000
             
             if simplified:
