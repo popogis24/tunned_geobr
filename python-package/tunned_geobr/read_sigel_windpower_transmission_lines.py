@@ -9,6 +9,7 @@ from pathlib import Path
 from io import BytesIO
 import warnings
 import json
+from fp.fp import FreeProxy
 
 def read_sigel_windpower_transmission_lines(simplified=False, verbose=False):
     """Download Wind Power Transmission Lines data from Sigel.
@@ -35,7 +36,11 @@ def read_sigel_windpower_transmission_lines(simplified=False, verbose=False):
     # Read wind power transmission lines data
     >>> transmission_lines = read_sigel_windpower_transmission_lines()
     """
-    
+    proxy = FreeProxy(country_id=['BR']).get()
+    proxies = {
+        'http':proxy,
+        'https':proxy
+    }
     # URL for the Sigel geoserver WFS service
     url = r'https://sigel.aneel.gov.br/arcgis/rest/services/PORTAL/ExtractDataTaskAneel/GPServer/Extract%20Data%20Task/execute?f=json&env:outSR=102100&Layers_to_Clip=["Linha de Transmissão EOL"]&Area_of_Interest={"geometryType":"esriGeometryPolygon","features":[{"geometry":{"rings":[[[-10056193.304181412,-5207437.87749587],[-10056193.304181412,2052245.3209151002],[-2405152.5209504515,2052245.3209151002],[-2405152.5209504515,-5207437.87749587],[-10056193.304181412,-5207437.87749587]]],"spatialReference":{"wkid":102100}}}],"sr":{"wkid":102100}}&Feature_Format=Shapefile - SHP - .shp&Raster_Format=Tagged Image File Format - TIFF - .tif'
  
@@ -46,7 +51,7 @@ def read_sigel_windpower_transmission_lines(simplified=False, verbose=False):
         if verbose:
             print("Requesting data from Sigel server...")
             
-        response = requests.get(url, timeout=60, verify=False)
+        response = requests.get(url, timeout=60, verify=False, proxies=proxies)
         if not response.ok:
             raise Exception(f"Error getting JSON response: {response.status_code}")
 
@@ -149,7 +154,7 @@ if __name__ == '__main__':
     try:
         transmission_lines_data = read_sigel_windpower_transmission_lines(verbose=True)
         print(f"Downloaded wind power transmission lines data with {len(transmission_lines_data)} records and {len(transmission_lines_data.columns)} columns")
-        
+        print(transmission_lines_data)
         # Test simplified version
         simplified_data = read_sigel_windpower_transmission_lines(simplified=True)
         print(f"Simplified data has {len(simplified_data.columns)} columns: {simplified_data.columns.tolist()}")
