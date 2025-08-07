@@ -143,3 +143,4 @@ from .read_conservation_units import read_conservation_units
 from .read_conservation_units_without_delimitation import read_conservation_units_without_delimitation
 from .read_dup import read_dup
 from .read_2d_seismic import read_2d_seismic
+from .read_3d_seismic import read_3d_seismic

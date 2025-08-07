@@ -148,6 +148,7 @@ def list_geobr():
         {"Function": "read_production_fields", "Geography": "Oil and Gas Production Fields", "Years": "All", "Source": "ANP"},
         {"Function": "read_oil_wells", "Geography": "Oil and Gas Wells", "Years": "All", "Source": "ANP"},
         {"Function": "read_2d_seismic", "Geography": "2D Seismic Surveys", "Years": "All", "Source": "ANP"},
+        {"Function": "read_3d_seismic", "Geography": "3D Seismic Surveys", "Years": "All", "Source": "ANP"},
         {"Function": "read_fuel_bases", "Geography": "Fuel Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_glp_bases", "Geography": "GLP (LPG) Bases", "Years": "All", "Source": "EPE"},
         {"Function": "read_processing_facilities", "Geography": "Oil and Gas Processing Facilities", "Years": "All", "Source": "EPE"},
