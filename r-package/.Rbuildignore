@@ -1,0 +1,24 @@
+^geobr\.Rproj$
+^\.Rproj\.user$
+^test$
+^prep_data$
+^manual\.pdf$
+^brazil_2010\.R$
+^brazil_2010\.RData$
+^  Georeferencing-gain$
+^crosswalk_pre\.R$
+^brazil_2010\.Rd$
+^  Georeferencing-gain\.R$
+^  Georeferencing-gain\.Rmd$
+^codecov\.yml$
+^travis\.yml$
+^NEWS\.md$
+^\.travis\.yml$
+^README\.md$
+^geobr_logo_b\.svg$
+^_pkgdown\.yml$
+^docs$
+^pkgdown$
+^vignettes/python-intro$
+^cran-comments\.md$
+index.md
