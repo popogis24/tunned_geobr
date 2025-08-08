@@ -62,6 +62,7 @@ def list_geobr():
         {"Function": "read_vegetation", "Geography": "Brazilian Vegetation", "Years": "All", "Source": "IBGE"},
         {"Function": "read_transmission_lines_ons", "Geography": "Transmission Lines", "Years": "All", "Source": "ONS"},
         {"Function": "read_water_bodies_ana", "Geography": "Water Bodies", "Years": "All", "Source": "ANA"},
+        {"Function": "read_dams_ana", "Geography": "Dams and Reservoirs", "Years": "All", "Source": "ANA"},
         {"Function": "read_pan_strategic_areas", "Geography": "PAN Strategic Areas", "Years": "All", "Source": "ICMBio"},
         {"Function": "read_geographic_regions", "Geography": "Geographic Regions", "Years": "All", "Source": "IBGE"},
         {"Function": "read_biosphere_reserves", "Geography": "Biosphere Reserves", "Years": "All", "Source": "MMA"},
