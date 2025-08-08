@@ -145,3 +145,5 @@ from .read_dup import read_dup
 from .read_2d_seismic import read_2d_seismic
 from .read_3d_seismic import read_3d_seismic
 from .read_dams_ana import read_dams_ana
+from .read_locks_dnit import read_locks_dnit
+from .read_special_artworks_dnit import read_special_artworks_dnit

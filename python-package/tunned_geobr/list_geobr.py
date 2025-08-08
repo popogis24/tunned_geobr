@@ -95,9 +95,11 @@ def list_geobr():
         {"Function": "read_private_aerodromes", "Geography": "Private Aerodromes", "Years": "All", "Source": "MapBiomas"},
         {"Function": "read_state_highways", "Geography": "State Highways", "Years": "All", "Source": "MapBiomas"},
         {"Function": "read_federal_highways", "Geography": "Federal Highways", "Years": "All", "Source": "MapBiomas"},
-        {"Function": "read_railways", "Geography": "Railways", "Years": "All", "Source": "MapBiomas"},
+        {"Function": "read_railways", "Geography": "Railways", "Years": "All", "Source": "DNIT"},
         {"Function": "read_waterways", "Geography": "Waterways", "Years": "All", "Source": "SNIRH"},
         {"Function": "read_heliports", "Geography": "Heliports", "Years": "All", "Source": "MapBiomas"},
+        {"Function": "read_special_artworks_dnit", "Geography": "Special Artworks (Bridges, Viaducts)", "Years": "All", "Source": "DNIT"},
+        {"Function": "read_locks_dnit", "Geography": "Navigation Locks (Eclusas)", "Years": "All", "Source": "DNIT"},
         
         # Land tenure and property datasets
         {"Function": "read_snci_properties", "Geography": "SNCI Properties", "Years": "All", "Source": "INCRA"},
