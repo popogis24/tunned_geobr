@@ -147,3 +147,4 @@ from .read_3d_seismic import read_3d_seismic
 from .read_dams_ana import read_dams_ana
 from .read_locks_dnit import read_locks_dnit
 from .read_special_artworks_dnit import read_special_artworks_dnit
+from .read_optical_fiber_nodes import read_optical_fiber_nodes
