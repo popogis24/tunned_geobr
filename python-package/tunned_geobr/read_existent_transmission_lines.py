@@ -127,3 +127,7 @@ def read_existent_transmission_lines(simplified=False, verbose=False):
     
     except Exception as e:
         raise Exception(f"Failed to download or process existing transmission lines data: {str(e)}")
+
+if __name__ == '__main__':
+    # Example usage
+    gdf = read_existent_transmission_lines()
