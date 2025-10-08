@@ -67,6 +67,9 @@ def list_geobr():
         {"Function": "read_geographic_regions", "Geography": "Geographic Regions", "Years": "All", "Source": "IBGE"},
         {"Function": "read_biosphere_reserves", "Geography": "Biosphere Reserves", "Years": "All", "Source": "MMA"},
         {"Function": "read_baze_sites", "Geography": "BAZE Sites", "Years": "2018", "Source": "MMA"},
+        {"Function": "read_granted_port_facilities", "Geography": "Granted Port Facilities", "Years": "All", "Source": "ANTAQ"},
+        {"Function": "read_granted_crossing_lines", "Geography": "Granted Crossing Lines", "Years": "All", "Source": "ANTAQ"},
+        {"Function": "read_economically_navigable_inland_waterways", "Geography": "Economically Navigable Inland Waterways", "Years": "All", "Source": "ANTAQ"},
         
         # Environmental and conservation datasets
         {"Function": "read_amazon_ibas", "Geography": "Amazon IBAs", "Years": "All", "Source": "SAVE Brasil"},

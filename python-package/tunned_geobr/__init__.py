@@ -148,3 +148,6 @@ from .read_dams_ana import read_dams_ana
 from .read_locks_dnit import read_locks_dnit
 from .read_special_artworks_dnit import read_special_artworks_dnit
 from .read_optical_fiber_nodes import read_optical_fiber_nodes
+from .read_granted_port_facilities import read_granted_port_facilities
+from .read_granted_crossing_lines import read_granted_crossing_lines
+from .read_economically_navigable_inland_waterways import read_economically_navigable_inland_waterways

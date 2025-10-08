@@ -78,3 +78,6 @@ def read_ports(simplified=False):
         raise Exception(f"Error downloading ports data: {str(e)}")
         
     return gdf
+
+if __name__ == "__main__":
+    read_ports(simplified=False)
