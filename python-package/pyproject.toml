@@ -1,6 +1,6 @@
 [project]
 name = "tunned-geobr"
-version = "1.0.38"
+version = "1.0.39"
 description = "Fork personalizado do geobr com funcionalidades extras como download de dados da ANM"
 readme = "README.md"
 requires-python = "<4.0,>=3.9"
