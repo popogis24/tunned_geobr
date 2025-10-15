@@ -17,6 +17,7 @@ from .read_census_tract import read_census_tract
 from .read_meso_region import read_meso_region
 from .read_micro_region import read_micro_region
 from .read_municipality import read_municipality
+from .read_municipality_direct import read_municipality_direct
 from .read_weighting_area import read_weighting_area
 from .read_health_region import read_health_region
 from .read_pop_arrangements import read_pop_arrangements
