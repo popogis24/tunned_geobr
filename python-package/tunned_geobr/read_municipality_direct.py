@@ -42,7 +42,7 @@ def read_municipality_direct(code_muni="all", simplified=False):
     >>> municipality = read_municipality(code_muni=3304557)
     """
     
-    url = "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2023/Brasil/BR_Municipios_2023.zip"
+    url = "https://geoftp.ibge.gov.br/organizacao_do_territorio/malhas_territoriais/malhas_municipais/municipio_2024/Brasil/BR_Municipios_2024.zip"
     
     try:
         # Download the zip file
